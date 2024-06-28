@@ -22,7 +22,8 @@ import user.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include('user.url')),
-     path('',user.views.home,name='home')
+    path('book/',include('book.url')),
+    path('',user.views.home,name='home')
     
 ]
 
