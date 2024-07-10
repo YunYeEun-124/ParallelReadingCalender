@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 # Create your models here.
 class Book(models.Model):
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     author = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     total_page = models.IntegerField(default=0)
